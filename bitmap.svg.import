@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://lb6cusswm5ao"
+path="res://.godot/imported/bitmap.svg-46b7b63bcc19baa2ad6e478521d883af.res"
+
+[deps]
+
+source_file="res://bitmap.svg"
+dest_files=["res://.godot/imported/bitmap.svg-46b7b63bcc19baa2ad6e478521d883af.res"]
+
+[params]
+
+create_from=0
+threshold=0.0

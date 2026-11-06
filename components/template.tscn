@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dp8mv3wc5mihs"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g7b7a"]
+size = Vector3(1, 0.25, 1)
+
+[node name="Template" type="Node3D" unique_id=1905593147]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1808455049]
+mesh = SubResource("BoxMesh_g7b7a")
+
+[node name="Label" type="Label3D" parent="." unique_id=430436997]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, 0, 0.19111776, 0)
+text = "Component"
+
+[node name="Pins" type="Node3D" parent="." unique_id=1093803023]

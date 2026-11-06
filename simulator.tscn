@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dwab0nl43p0al"]
+
+[ext_resource type="Script" uid="uid://owqv76ygw6ih" path="res://simulator.gd" id="1_vjc0a"]
+[ext_resource type="Script" uid="uid://dlq4h8nrnh37w" path="res://camera.gd" id="2_camera"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g7b7a"]
+size = Vector3(100, 0.276, 100)
+
+[sub_resource type="Gradient" id="Gradient_pu4iu"]
+colors = PackedColorArray(1, 1, 1, 0.75, 1, 1, 1, 0.75)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_btn_light"]
+gradient = SubResource("Gradient_pu4iu")
+width = 80
+height = 80
+
+[sub_resource type="Gradient" id="Gradient_k7b51"]
+colors = PackedColorArray(0.2, 0.2, 0.2, 0.75, 0.2, 0.2, 0.2, 0.75)
+metadata/_snap_count = 2
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_btn_dark"]
+gradient = SubResource("Gradient_k7b51")
+width = 80
+height = 80
+
+[node name="Simulator" type="Node3D" unique_id=1344724096]
+script = ExtResource("1_vjc0a")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=582013871]
+mesh = SubResource("BoxMesh_g7b7a")
+
+[node name="Camera" type="Camera3D" parent="." unique_id=519141153]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 7.2684197, 0)
+script = ExtResource("2_camera")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1525076609]
+
+[node name="Forward" type="TouchScreenButton" parent="CanvasLayer" unique_id=1941142771]
+position = Vector2(110, 390)
+texture_normal = SubResource("GradientTexture2D_btn_light")
+passby_press = true
+action = "forward"
+
+[node name="Backward" type="TouchScreenButton" parent="CanvasLayer" unique_id=1941142772]
+position = Vector2(110, 550)
+texture_normal = SubResource("GradientTexture2D_btn_light")
+passby_press = true
+action = "backward"
+
+[node name="Left" type="TouchScreenButton" parent="CanvasLayer" unique_id=1941142773]
+position = Vector2(30, 470)
+texture_normal = SubResource("GradientTexture2D_btn_light")
+passby_press = true
+action = "left"
+
+[node name="Right" type="TouchScreenButton" parent="CanvasLayer" unique_id=1941142774]
+position = Vector2(190, 470)
+texture_normal = SubResource("GradientTexture2D_btn_light")
+passby_press = true
+action = "right"
+
+[node name="Up" type="TouchScreenButton" parent="CanvasLayer" unique_id=1146379610]
+visible = false
+position = Vector2(850, 470)
+texture_normal = SubResource("GradientTexture2D_btn_light")
+passby_press = true
+action = "up"
+
+[node name="Down" type="TouchScreenButton" parent="CanvasLayer" unique_id=486960996]
+visible = false
+position = Vector2(970, 470)
+texture_normal = SubResource("GradientTexture2D_btn_dark")
+passby_press = true
+action = "down"
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1749479278]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBox" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=2072036533]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.2
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=596841985]
+transform = Transform3D(0.99999845, -0.0017453283, 0, 0.00041631915, 0.23853306, 0.9711343, -0.0016949482, -0.9711328, 0.23853344, 0, 21.570976, 0)
+light_energy = 2.324

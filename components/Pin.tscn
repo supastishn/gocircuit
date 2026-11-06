@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dt5sj3wrxg2fj"]
+
+[ext_resource type="Script" uid="uid://c0h2mylskxave" path="res://components/pin.gd" id="1_jvpgb"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6qx4q"]
+radius = 0.034
+height = 0.46
+
+[node name="Pin" type="Node3D" unique_id=1271999491]
+script = ExtResource("1_jvpgb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1125276890]
+mesh = SubResource("CapsuleMesh_6qx4q")
